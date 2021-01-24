@@ -1,0 +1,61 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [{
+            "type": "node",
+            "request": "launch",
+            "name": "run test_dev",
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "--recursive",
+                "-u",
+                "bdd",
+                "--fgrep",
+                "*end-to-end*",
+                "-i",
+                "--timeout",
+                "999999",
+                "--colors",
+                "${workspaceFolder}/test",
+                "--reporter",
+                "mochawesome",
+                "--reporter-options",
+                "reportDir=./reports,reportFilename=API_Report"
+            ],
+            "env": {
+                "NODE_ENV": "dev",
+                "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+            },
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "run tests_qa",
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "--recursive",
+                "-u",
+                "bdd",
+                "--fgrep",
+                "*end-to-end*",
+                "-i",
+                "--timeout",
+                "999999",
+                "--colors",
+                "${workspaceFolder}/test",
+                "--reporter",
+                "mochawesome",
+                "--reporter-options",
+                "reportDir=./reports,reportFilename=API_Report"
+            ],
+            "env": {
+                "NODE_ENV": "qa",
+                "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+            },
+            "internalConsoleOptions": "openOnSessionStart"
+        }       
+    ]
+}

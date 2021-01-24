@@ -1,0 +1,7 @@
+{
+	"timeout": 60000,
+	"base": {
+		"url": "http://api.intigral-ott.net/popcorn-api-rs-7.9.10",
+		"proxy": "/v1"
+	}
+}
